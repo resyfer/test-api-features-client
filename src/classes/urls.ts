@@ -27,4 +27,6 @@ class CollectionsAll extends URL {
   async post() {}
 }
 
-export { URL };
+export { URL, CollectionsAll };
+
+export {};

@@ -1,54 +1,45 @@
-interface pointGeoJSON {
+interface PointGeoJSON {
   type: "Point";
   coordinates: number[];
 }
 
-interface multipointGeoJSON {
+interface MultipointGeoJSON {
   type: "MultiPoint";
   coordinates: number[][];
 }
 
-interface linestringGeoJSON {
+interface LinestringGeoJSON {
   type: "LineString";
   coordinates: number[][];
 }
 
-interface multilinestringGeoJSON {
+interface MultilinestringGeoJSON {
   type: "MultiLineString";
   coordinates: number[][][];
 }
 
-interface polygonGeoJSON {
+interface PolygonGeoJSON {
   type: "Polygon";
   coordinates: number[][][];
 }
 
-interface multipolygonGeoJSON {
+interface MultipolygonGeoJSON {
   type: "MultiPolygon";
   coordinates: number[][][][];
 }
 
-interface geometrycollectionGeoJSON {
+interface GeometrycollectionGeoJSON {
   type: "GeometryCollection";
-  geometries: geometryGeoJSON[];
+  geometries: GeometryGeoJSON[];
 }
 
-type geometryGeoJSON =
-  | pointGeoJSON
-  | multipointGeoJSON
-  | linestringGeoJSON
-  | multilinestringGeoJSON
-  | polygonGeoJSON
-  | multipolygonGeoJSON
-  | geometrycollectionGeoJSON;
+type GeometryGeoJSON =
+  | PointGeoJSON
+  | MultipointGeoJSON
+  | LinestringGeoJSON
+  | MultilinestringGeoJSON
+  | PolygonGeoJSON
+  | MultipolygonGeoJSON
+  | GeometrycollectionGeoJSON;
 
-export type {
-  geometryGeoJSON,
-  pointGeoJSON,
-  multipointGeoJSON,
-  linestringGeoJSON,
-  multilinestringGeoJSON,
-  polygonGeoJSON,
-  multipolygonGeoJSON,
-  geometrycollectionGeoJSON,
-};
+export type { GeometryGeoJSON };

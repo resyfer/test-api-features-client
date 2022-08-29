@@ -1,9 +1,9 @@
-import { geometryGeoJSON } from "./geometryGeo";
+import { GeometryGeoJSON } from "./geometryGeo";
 import { Link } from "./link";
 
 interface FeatureGeoJSON {
   type: FEAT_GEO_TYPE;
-  geometry: geometryGeoJSON;
+  geometry: GeometryGeoJSON;
   properties?: any;
   id?: string | number;
   links?: Link[];

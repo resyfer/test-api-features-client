@@ -1,3 +1,3 @@
-type timeStamp = string;
+type TimeStamp = string;
 
-export type { timeStamp };
+export type { TimeStamp };

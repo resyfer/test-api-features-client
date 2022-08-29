@@ -11,7 +11,7 @@ class Request {
     });
   }
 
-  public async post(url: string, { body, params }: Types.Request.PostOptions) {
+  public async post(url: string, { body, params }: Types.PostOptions) {
     return axios({
       method: Constants.URL.METHOD.POST,
       url,

@@ -1,4 +1,4 @@
-type numberMatched = number;
-type numberReturned = number;
+type NumberMatched = number;
+type NumberReturned = number;
 
-export type { numberMatched, numberReturned };
+export type { NumberMatched, NumberReturned };

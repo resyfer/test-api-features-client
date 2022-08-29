@@ -1,15 +1,15 @@
 import { FeatureGeoJSON } from "./featureGeo";
 import { Link } from "./link";
-import { numberMatched, numberReturned } from "./number";
-import { timeStamp } from "./timestamp";
+import { NumberMatched, NumberReturned } from "./number";
+import { TimeStamp } from "./timestamp";
 
 interface FeatureCollectionGeoJSON {
   type: FEAT_COL_GEO_TYPE;
   features: FeatureGeoJSON[];
   links?: Link[];
-  timeStamp?: timeStamp;
-  numberMatched?: numberMatched;
-  numberReturned?: numberReturned;
+  timeStamp?: TimeStamp;
+  numberMatched?: NumberMatched;
+  numberReturned?: NumberReturned;
 }
 
 enum FEAT_COL_GEO_TYPE {
