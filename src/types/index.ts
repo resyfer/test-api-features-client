@@ -7,7 +7,7 @@ import { GeometryGeoJSON } from "./geometryGeo";
 import { LandingPage } from "./landingPage";
 import { Link } from "./link";
 import { NumberMatched, NumberReturned } from "./number";
-import { PostOptions } from "./request";
+import { GetOptions, PostOptions } from "./request";
 import { TimeStamp } from "./timestamp";
 import { URLBody, URLParams } from "./url";
 
@@ -23,6 +23,7 @@ export type {
   Link,
   NumberMatched,
   NumberReturned,
+  GetOptions,
   PostOptions,
   TimeStamp,
   URLBody,

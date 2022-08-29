@@ -1,23 +1,20 @@
 import axios from "axios";
 
 import * as Types from "../types";
-import * as Constants from "../constants";
 
 class Request {
-  public async get(url: string) {
-    return axios({
-      method: Constants.URL.METHOD.GET,
-      url,
-    });
+  public static async get<GetResponse>(
+    url: string,
+    { params }: Types.GetOptions = {}
+  ) {
+    return axios.get<GetResponse>(url, { params });
   }
 
-  public async post(url: string, { body, params }: Types.PostOptions) {
-    return axios({
-      method: Constants.URL.METHOD.POST,
-      url,
-      data: body,
-      params,
-    });
+  public static async post<PostResponse>(
+    url: string,
+    { body, params }: Types.PostOptions = {}
+  ) {
+    return axios.post<PostResponse>(url, body, { params });
   }
 }
 
