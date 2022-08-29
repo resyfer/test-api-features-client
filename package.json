@@ -1,0 +1,40 @@
+{
+  "name": "test-api-features-client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "source": "src/index.ts",
+  "types": "dist/types.d.ts",
+  "scripts": {
+    "start": "node",
+    "dev": "parcel watch",
+    "build": "pnpm check && pnpm test && parcel build",
+    "check": "tsc --noEmit",
+    "test": "nyc --reporter=text ts-mocha -p tsconfig.json test/**/*.ts --timeout 10000"
+  },
+  "keywords": [
+    "API Client"
+  ],
+  "author": {
+    "email": "palsaurav.2020@gmail.com",
+    "name": "Saurav Pal"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/packager-ts": "^2.7.0",
+    "@parcel/transformer-typescript-types": "^2.7.0",
+    "@types/chai": "^4.3.3",
+    "@types/chai-http": "^4.2.0",
+    "@types/mocha": "^9.1.1",
+    "@types/node": "^18.7.13",
+    "chai": "^4.3.6",
+    "mocha": "^10.0.0",
+    "nyc": "^15.1.0",
+    "parcel": "^2.7.0",
+    "ts-mocha": "^10.0.0",
+    "typescript": "^4.8.2"
+  },
+  "dependencies": {
+    "axios": "^0.27.2"
+  }
+}
