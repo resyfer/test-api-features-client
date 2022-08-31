@@ -3,6 +3,7 @@ import { ConfClasses } from "./confClass";
 import { Exception } from "./exception";
 import { Extent } from "./extent";
 import { FeatureCollectionGeoJSON } from "./featureCollectionGeo";
+import { FeatureGeoJSON } from "./featureGeo";
 import { GeometryGeoJSON } from "./geometryGeo";
 import { LandingPage } from "./landingPage";
 import { Link } from "./link";
@@ -18,6 +19,7 @@ export type {
   Exception,
   Extent,
   FeatureCollectionGeoJSON,
+  FeatureGeoJSON,
   GeometryGeoJSON,
   LandingPage,
   Link,

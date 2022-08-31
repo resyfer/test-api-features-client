@@ -2,9 +2,9 @@ import { GetURL } from "./url";
 import Request from "./request";
 import * as Types from "../types";
 
-class LandingPage extends GetURL {
+class Conformace extends GetURL {
   constructor() {
-    super("/");
+    super("/conformance");
   }
 
   override async get() {
@@ -12,4 +12,4 @@ class LandingPage extends GetURL {
   }
 }
 
-export default LandingPage;
+export default Conformace;

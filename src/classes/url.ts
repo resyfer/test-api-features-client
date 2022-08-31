@@ -1,11 +1,6 @@
 import { AxiosResponse } from "axios";
 import * as Constants from "../constants";
 
-interface URL {
-  get?<T>(): Promise<AxiosResponse<T, any>>;
-  post?<T>(): Promise<AxiosResponse<T, any>>;
-}
-
 abstract class URL {
   protected base: string;
 
@@ -14,4 +9,12 @@ abstract class URL {
   }
 }
 
-export default URL;
+abstract class GetURL extends URL {
+  abstract get(): Promise<AxiosResponse<unknown, any>>;
+}
+
+abstract class PostURL extends URL {
+  abstract post(): Promise<AxiosResponse<unknown, any>>;
+}
+
+export { GetURL, PostURL };
