@@ -12,7 +12,7 @@ class Request {
       GetResponse,
       ResponseSuccess<GetResponse> | ResponseError,
       D
-    >(url, { params });
+    >(url, { params, validateStatus: () => true });
   }
 
   public static async post<PostResponse>(
@@ -23,7 +23,7 @@ class Request {
       PostResponse,
       ResponseSuccess<PostResponse> | ResponseError,
       any
-    >(url, body, { params });
+    >(url, body, { params, validateStatus: () => true });
   }
 }
 

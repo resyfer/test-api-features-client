@@ -1,4 +1,4 @@
-const BASE_URL = "https://www.example.org/ogcapi";
+const BASE_URL = "http://localhost:5000";
 
 enum REL_URL {
   LANDING_PAGE = "/",

@@ -9,7 +9,7 @@ class Conformace extends GetURL {
   }
 
   override async get() {
-    return Request.get<Types.LandingPage>(this.base);
+    return Request.get<Types.ConfClasses>(this.base);
   }
 }
 

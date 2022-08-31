@@ -2,6 +2,7 @@ import { GetURL } from "./url";
 import Request from "./request";
 import * as Types from "../types";
 import * as Constants from "../constants";
+
 class Collections extends GetURL {
   constructor() {
     super(Constants.URL.REL_URL.COLLECTIONS);

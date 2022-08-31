@@ -6,9 +6,9 @@ interface Collection {
   title?: string;
   description?: string;
   links: Link[];
-  extent: Extent;
-  itemType: string;
-  crs: string[];
+  extent?: Extent;
+  itemType?: string;
+  crs?: string[];
 }
 
 interface Collections {

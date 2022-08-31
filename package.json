@@ -7,11 +7,13 @@
   "types": "dist/types.d.ts",
   "scripts": {
     "start": "node",
-    "dev": "parcel watch",
-    "build": "pnpm check && pnpm test && tsc",
+    "dev": "pnpm build && node ./dist/index.js",
+    "dev:parcel": "parcel watch",
+    "build": "rm -rf dist && pnpm check && pnpm test && tsc",
     "build:parcel": "pnpm check && pnpm test && parcel build",
     "check": "tsc --noEmit",
-    "test": "nyc --reporter=text ts-mocha -p tsconfig.json test/**/*.ts --timeout 10000"
+    "test": "nyc --reporter=text ts-mocha -p tsconfig.json test/**/*.ts --timeout 10000",
+    "docker": "sudo docker run -p 8080:80 geopython/pygeoapi"
   },
   "keywords": [
     "API Client"
