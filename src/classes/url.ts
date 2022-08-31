@@ -1,4 +1,3 @@
-import { AxiosResponse } from "axios";
 import * as Constants from "../constants";
 
 abstract class URL {
@@ -10,11 +9,11 @@ abstract class URL {
 }
 
 abstract class GetURL extends URL {
-  abstract get(): Promise<AxiosResponse<unknown, any>>;
+  abstract get(): Promise<unknown>;
 }
 
 abstract class PostURL extends URL {
-  abstract post(): Promise<AxiosResponse<unknown, any>>;
+  abstract post(): Promise<unknown>;
 }
 
 export { GetURL, PostURL };
