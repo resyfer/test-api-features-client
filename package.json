@@ -8,7 +8,8 @@
   "scripts": {
     "start": "node",
     "dev": "parcel watch",
-    "build": "pnpm check && pnpm test && parcel build",
+    "build": "pnpm check && pnpm test && tsc",
+    "build:parcel": "pnpm check && pnpm test && parcel build",
     "check": "tsc --noEmit",
     "test": "nyc --reporter=text ts-mocha -p tsconfig.json test/**/*.ts --timeout 10000"
   },

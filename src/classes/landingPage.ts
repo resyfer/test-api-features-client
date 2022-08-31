@@ -1,10 +1,11 @@
 import { GetURL } from "./url";
 import Request from "./request";
 import * as Types from "../types";
+import * as Constants from "../constants";
 
 class LandingPage extends GetURL {
   constructor() {
-    super("/");
+    super(Constants.URL.REL_URL.LANDING_PAGE);
   }
 
   override async get() {

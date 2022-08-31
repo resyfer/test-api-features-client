@@ -1,10 +1,10 @@
 import { GetURL } from "./url";
 import Request from "./request";
 import * as Types from "../types";
-
+import * as Constants from "../constants";
 class Collections extends GetURL {
   constructor() {
-    super("/collections");
+    super(Constants.URL.REL_URL.COLLECTIONS);
   }
 
   async get() {
@@ -16,7 +16,7 @@ class Collection extends GetURL {
   protected collectionId: string;
 
   constructor(collectionId: string) {
-    super("/collections");
+    super(Constants.URL.REL_URL.COLLECTIONS);
     this.collectionId = collectionId;
   }
 
@@ -37,12 +37,12 @@ class CollectionItems extends GetURL {
   protected collectionId: string;
 
   constructor(collectionId: string) {
-    super(`/collections/${collectionId}`);
+    super(`${Constants.URL.REL_URL.COLLECTIONS}/${collectionId}/items`);
     this.collectionId = collectionId;
   }
 
   async get() {
-    return Request.get<Types.FeatureCollectionGeoJSON>(`${this.base}/items`);
+    return Request.get<Types.FeatureCollectionGeoJSON>(this.base);
   }
 }
 
@@ -51,15 +51,15 @@ class CollectionItem extends GetURL {
   protected featureId: string;
 
   constructor(collectionId: string, featureId: string) {
-    super(`/collections/${collectionId}`);
+    super(
+      `${Constants.URL.REL_URL.COLLECTIONS}/${collectionId}/items/${featureId}`
+    );
     this.collectionId = collectionId;
     this.featureId = featureId;
   }
 
   override async get() {
-    return Request.get<Types.FeatureGeoJSON>(
-      `${this.base}/items/${this.featureId}`
-    );
+    return Request.get<Types.FeatureGeoJSON>(this.base);
   }
 }
 

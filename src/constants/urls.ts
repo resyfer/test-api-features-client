@@ -1,4 +1,9 @@
 const BASE_URL = "https://www.example.org/ogcapi";
-const COLLECTIONS_RELATIVE_URL = "/collections";
 
-export { BASE_URL, COLLECTIONS_RELATIVE_URL };
+enum REL_URL {
+  LANDING_PAGE = "/",
+  COLLECTIONS = "/collections",
+  CONFORMANCE = "/conformance",
+}
+
+export { BASE_URL, REL_URL };
