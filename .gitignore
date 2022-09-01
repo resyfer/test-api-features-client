@@ -1,0 +1,5 @@
+node_modules
+.env.prod
+.parcel-cache
+dist
+.nyc_output
