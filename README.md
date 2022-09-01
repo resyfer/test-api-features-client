@@ -38,6 +38,24 @@ import ogc from "<path-to-src-folder>";
 
 in accordance to the [OGC Features API v1.0.1](https://app.swaggerhub.com/apis/OGC/ogcapi-features-1-example-1/1.0.1)
 
+## Usage
+
+```ts
+import ogc from "../src";
+
+(async() => {
+
+  const res = await ogc.collections().get();
+
+  if(res.status === 200) {
+    console.log(res.data.links[0].href);
+  } else {
+    console.log(res.data.code);
+  }
+
+})()
+```
+
 ## Testing
 Make sure [API is running](#start-api) and then
 
