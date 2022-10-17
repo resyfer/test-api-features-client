@@ -1,5 +1,5 @@
 type URLBody = {
-  [key: string]: string;
+  [key: string]: any;
 };
 
 type URLParams = {

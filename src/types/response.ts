@@ -14,8 +14,8 @@ interface ResponseError {
     description: string;
   };
   status: 400 | 404 | 500;
-  headers: AxiosResponseHeaders;
-  config: AxiosRequestConfig<any>;
+  headers?: AxiosResponseHeaders;
+  config?: AxiosRequestConfig<any>;
   request?: any;
 }
 
