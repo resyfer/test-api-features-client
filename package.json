@@ -6,9 +6,9 @@
   "source": "src/index.ts",
   "types": "dist/types.d.ts",
   "scripts": {
-    "start": "node",
-    "dev": "pnpm build && node ./dist/index.js",
-    "build": "rm -rf dist && pnpm check && pnpm test && tsc",
+    "start": "node ./dist/index.js",
+    "dev": "ts-node-esm src/index.ts",
+    "build": "rm -rf dist && pnpm check && tsc",
     "check": "tsc --noEmit",
     "test": "nyc --reporter=text ts-mocha -p tsconfig.json test/**/*.test.ts --timeout 10000",
     "docker": "sudo docker run -p 5000:80 geopython/pygeoapi"
@@ -30,6 +30,7 @@
     "mocha": "^10.0.0",
     "nyc": "^15.1.0",
     "ts-mocha": "^10.0.0",
+    "ts-node": "^10.9.1",
     "typescript": "^4.8.2"
   },
   "dependencies": {
