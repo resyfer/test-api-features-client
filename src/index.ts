@@ -2,7 +2,7 @@ import { Collection, Collections } from "./classes/collection";
 import Conformace from "./classes/conformance";
 import LandingPage from "./classes/landingPage";
 
-class OGC {
+class Features {
   static get() {
     return new LandingPage().get();
   }
@@ -20,4 +20,4 @@ class OGC {
   }
 }
 
-export default OGC;
+export default Features;

@@ -1,19 +1,18 @@
 import * as Constants from "../constants";
+import Request from "./request";
 
 abstract class URL {
-  protected base: string;
+  protected apiURL: string;
 
   constructor(relative_url: string) {
-    this.base = `${Constants.URL.BASE_URL}${relative_url}`;
+    this.apiURL = `${Constants.URL.BASE_URL}${relative_url}`;
   }
 }
 
-abstract class GetURL extends URL {
-  abstract get(): Promise<unknown>;
+class GetURL<T> extends URL {
+  async get() {
+    return Request.get<T>(this.apiURL);
+  }
 }
 
-abstract class PostURL extends URL {
-  abstract post(): Promise<unknown>;
-}
-
-export { GetURL, PostURL };
+export { GetURL };
