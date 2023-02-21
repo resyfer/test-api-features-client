@@ -1,23 +1,7 @@
-import { Collection, Collections } from "./classes/collection";
-import Conformace from "./classes/conformance";
-import LandingPage from "./classes/landingPage";
+import * as API from "./apis";
 
 class OGC {
-  static get() {
-    return new LandingPage().get();
-  }
-
-  static conformance() {
-    return new Conformace();
-  }
-
-  static collections() {
-    return new Collections();
-  }
-
-  static collection(collection_id: string) {
-    return new Collection(collection_id);
-  }
+  static features = API.Features;
 }
 
 export default OGC;

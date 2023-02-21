@@ -1,12 +1,13 @@
 import { expect } from "chai";
-import ogc from "../src";
+import ogc from "../../src";
 
 describe("Collections", () => {
   describe("Collections Route", () => {
     it("Gives Collections Details", async () => {
-      const res = await ogc.collections().get();
+      const res = await ogc.features.collections().get();
 
       const { status, data } = res;
+      expect(status).to.be.a("number");
 
       if (status == 200) {
         expect(data)
@@ -54,12 +55,13 @@ describe("Collections", () => {
 
     it("Gives a Particular Collection Details", async () => {
       const responses = await Promise.all([
-        ogc.collection("utah_city_locations").get(),
-        ogc.collection("10").get(),
+        ogc.features.collection("utah_city_locations").get(),
+        ogc.features.collection("10").get(),
       ]);
 
       responses.forEach((res) => {
         const { status, data } = res;
+        expect(status).to.be.a("number");
 
         if (status === 200) {
           expect(data)
@@ -96,12 +98,13 @@ describe("Collections", () => {
   describe("Items Routes", () => {
     it("Give Items Details", async () => {
       const responses = await Promise.all([
-        ogc.collection("obs").items().get(),
-        ogc.collection("10").items().get(),
+        ogc.features.collection("obs").items().get(),
+        ogc.features.collection("10").items().get(),
       ]);
 
       responses.forEach((res) => {
         const { status, data } = res;
+        expect(status).to.be.a("number");
 
         if (status === 200) {
           expect(data)
@@ -138,12 +141,13 @@ describe("Collections", () => {
 
     it("Gives a Particular Item Details", async () => {
       const responses = await Promise.all([
-        ogc.collection("obs").item("1").get(),
-        ogc.collection("10").item("1").get(),
+        ogc.features.collection("obs").item("1").get(),
+        ogc.features.collection("10").item("1").get(),
       ]);
 
       responses.forEach((res) => {
         const { status, data } = res;
+        expect(status).to.be.a("number");
 
         if (status === 200) {
           expect(data)

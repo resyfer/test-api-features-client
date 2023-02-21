@@ -1,12 +1,12 @@
-import { GetURL } from "./url";
-import Request from "./request";
+import { GetURL } from "../url";
+import Request from "../request";
 
-import * as Types from "../types";
-import * as Constants from "../constants";
+import * as Types from "../../types";
+import * as Constants from "../../constants";
 
 class Collections extends GetURL {
   constructor() {
-    super(Constants.URL.REL_URL.COLLECTIONS);
+    super(Constants.URL.REL_URL.FEATURES_COLLECTIONS);
   }
 
   async get() {
@@ -18,7 +18,7 @@ class Collection extends GetURL {
   protected collectionId: string;
 
   constructor(collectionId: string) {
-    super(Constants.URL.REL_URL.COLLECTIONS);
+    super(Constants.URL.REL_URL.FEATURES_COLLECTIONS);
     this.collectionId = collectionId;
   }
 
@@ -39,7 +39,9 @@ class CollectionItems extends GetURL {
   protected collectionId: string;
 
   constructor(collectionId: string) {
-    super(`${Constants.URL.REL_URL.COLLECTIONS}/${collectionId}/items`);
+    super(
+      `${Constants.URL.REL_URL.FEATURES_COLLECTIONS}/${collectionId}/items`
+    );
     this.collectionId = collectionId;
   }
 
@@ -54,7 +56,7 @@ class CollectionItem extends GetURL {
 
   constructor(collectionId: string, featureId: string) {
     super(
-      `${Constants.URL.REL_URL.COLLECTIONS}/${collectionId}/items/${featureId}`
+      `${Constants.URL.REL_URL.FEATURES_COLLECTIONS}/${collectionId}/items/${featureId}`
     );
     this.collectionId = collectionId;
     this.featureId = featureId;

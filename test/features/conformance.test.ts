@@ -1,11 +1,12 @@
 import { expect } from "chai";
-import ogc from "../src";
+import ogc from "../../src";
 
 describe("Conformance", () => {
   it("Gives Conformance Details", async () => {
-    const res = await ogc.conformance().get();
+    const res = await ogc.features.conformance().get();
 
     const { status, data } = res;
+    expect(status).to.be.a("number");
 
     if (status === 200) {
       expect(data)

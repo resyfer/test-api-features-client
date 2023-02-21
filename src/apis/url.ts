@@ -31,7 +31,7 @@ abstract class GetURL extends URL {
 
 /**
  *? @description In the case of wanting mulitple methods,
- *? the class has to extend either of the method abstract
+ *? the class has to extend only one of the abstract
  *? classes and implement the others as TS does allow multiple
  *? inheritance for classes
  */

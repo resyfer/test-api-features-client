@@ -13,11 +13,13 @@ class Request {
     { params }: Types.GetOptions = {}
   ) {
     try {
-      return axios.get<
+      //! Need to use await here due to one of the caveats of async/await
+      //! https://itnext.io/error-handling-with-async-await-in-js-26c3f20bc06a
+      return await axios.get<
         GetResponse,
         ResponseSuccess<GetResponse> | ResponseError,
         D
-      >(url, { params, validateStatus: () => true });
+      >(url, { params });
     } catch (err) {
       return {
         data: {
